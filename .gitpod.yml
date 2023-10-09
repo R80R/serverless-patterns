@@ -22,6 +22,13 @@ tasks:
       sudo ./aws/install
       cd $THEIA_WORKSPACE_ROOT
       python -m pip install awscli-local
+  - name: install-awssamcli
+      cd /workspace
+      mkdir install-awssam
+      cd install-awssam
+      curl "https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86_64.zip" -o "awssamcli.zip"
+      unzip awssamcli.zip
+      sudo ./install --update
 ports:
   - port: 4510-4559
     onOpen: ignore
